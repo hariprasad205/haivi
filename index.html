@@ -6,287 +6,252 @@
 
 <title>H.A.I.V.I. | Personal AI Operating System</title>
 
-<!-- Standard Favicon -->
+<!-- Favicon / Tab Logo (Desktop & iOS Safari) -->
 <link rel="icon" type="image/png" href="subject.png">
-
-<!-- iOS Safari Tab / Bookmark Icon -->
 <link rel="apple-touch-icon" href="subject.png">
 
 <style>
 :root {
-    --bg:#050816;
-    --card:rgba(15,25,45,.65);
-    --cyan:#00f7ff;
-    --purple:#7b00ff;
-    --text:#f5f7ff;
-    --muted:#94a3b8;
+    --bg: #050816;
+    --card: rgba(15, 25, 45, 0.65);
+    --cyan: #00f7ff;
+    --purple: #7b00ff;
+    --text: #f5f7ff;
+    --muted: #94a3b8;
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Segoe UI,Roboto,sans-serif;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI, Roboto, sans-serif;
 }
 
-body{
-    background:var(--bg);
-    color:var(--text);
-    overflow-x:hidden;
+body {
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
 }
 
-
-/* Background */
-
-body::before{
-    content:"";
-    position:fixed;
-    width:600px;
-    height:600px;
-    background:var(--cyan);
-    filter:blur(180px);
-    opacity:.15;
-    top:-200px;
-    left:-200px;
+/* Background Glowing Blobs */
+body::before {
+    content: "";
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: var(--cyan);
+    filter: blur(180px);
+    opacity: 0.15;
+    top: -200px;
+    left: -200px;
+    pointer-events: none; /* Prevents blocking taps/clicks on mobile */
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    width:500px;
-    height:500px;
-    background:var(--purple);
-    filter:blur(180px);
-    opacity:.15;
-    right:-150px;
-    bottom:-100px;
+body::after {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: var(--purple);
+    filter: blur(180px);
+    opacity: 0.15;
+    right: -150px;
+    bottom: -100px;
+    pointer-events: none; /* Prevents blocking taps/clicks on mobile */
 }
-
 
 /* Navbar */
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    border-bottom:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(20px);
-    position:sticky;
-    top:0;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    background: rgba(5, 8, 22, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    position: sticky;
+    top: 0;
     z-index: 100;
 }
 
 .logo-container {
-    display:flex;
-    align-items:center;
-    gap:12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .nav-logo-img {
-    height:32px;
-    width:auto;
-    object-fit:contain;
+    height: 32px;
+    width: auto;
+    object-fit: contain;
 }
 
-.logo{
-    font-size:28px;
-    font-weight:900;
-    background:linear-gradient(90deg,var(--cyan),var(--purple));
-    color:transparent;
-    background-clip:text;
-    -webkit-background-clip:text;
+.logo {
+    font-size: 28px;
+    font-weight: 900;
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
-nav span{
-    color:var(--muted);
+nav span {
+    color: var(--muted);
 }
 
-
-/* Hero */
-
-.hero{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    flex-direction:column;
-    text-align:center;
-    padding:20px;
+/* Hero Section */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
 }
 
-
-.core{
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    background:
-    radial-gradient(circle,
-    white,
-    var(--cyan),
-    transparent 60%);
-
-    box-shadow:
-    0 0 40px var(--cyan),
-    0 0 100px var(--cyan);
-
-    animation:pulse 3s infinite;
+.core {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, white, var(--cyan), transparent 60%);
+    box-shadow: 0 0 40px var(--cyan), 0 0 100px var(--cyan);
+    animation: pulse 3s infinite;
 }
 
-
-@keyframes pulse{
-    50%{
-        transform:scale(1.1);
+@keyframes pulse {
+    50% {
+        transform: scale(1.1);
     }
 }
 
-
-.hero h1{
-    font-size:70px;
-    margin-top:40px;
+.hero h1 {
+    font-size: 70px;
+    margin-top: 40px;
 }
 
-
-.gradient{
-    background:linear-gradient(
-    90deg,
-    var(--cyan),
-    var(--purple));
-
-    color:transparent;
-    background-clip:text;
-    -webkit-background-clip:text;
+.gradient {
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
-
-.hero p{
-    max-width:700px;
-    margin:20px;
-    color:var(--muted);
-    font-size:20px;
+.hero p {
+    max-width: 700px;
+    margin: 20px;
+    color: var(--muted);
+    font-size: 20px;
 }
 
-
-.buttons a{
-    display:inline-block;
-    margin:10px;
-    padding:15px 35px;
-    border-radius:30px;
-    text-decoration:none;
-    font-weight:bold;
-    cursor:pointer;
+.buttons {
+    position: relative;
+    z-index: 10;
 }
 
-
-.primary{
-    background:linear-gradient(
-    90deg,var(--cyan),var(--purple));
-    color:black;
+.buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    z-index: 11;
+    -webkit-tap-highlight-color: transparent;
 }
 
-
-.secondary{
-    border:1px solid var(--cyan);
-    color:white;
+.primary {
+    background: linear-gradient(90deg, var(--cyan), var(--purple));
+    color: black;
 }
 
+.secondary {
+    border: 1px solid var(--cyan);
+    color: white;
+}
 
 /* Sections */
-
-section{
-    padding:80px 8%;
+section {
+    padding: 80px 8%;
 }
 
-
-.title{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:50px;
+.title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
 }
-
 
 /* Cards */
-
-.grid{
-    display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
-
-.card{
-    background:var(--card);
-    border:1px solid rgba(0,247,255,.2);
-    padding:30px;
-    border-radius:20px;
-    backdrop-filter:blur(20px);
-    transition:.3s;
+.card {
+    background: var(--card);
+    border: 1px solid rgba(0, 247, 255, 0.2);
+    padding: 30px;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    transition: 0.3s;
 }
 
-
-.card:hover{
-    transform:translateY(-10px);
-    box-shadow:0 0 30px rgba(0,247,255,.2);
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.2);
 }
 
-
-.card h3{
-    color:var(--cyan);
-    margin-bottom:15px;
+.card h3 {
+    color: var(--cyan);
+    margin-bottom: 15px;
 }
 
-
-.card p{
-    color:var(--muted);
+.card p {
+    color: var(--muted);
 }
-
 
 /* Architecture */
-
-.arch{
-    background:#02030a;
-    padding:40px;
-    border-radius:20px;
-    text-align:center;
-    font-size:20px;
-    line-height:2;
-    border:1px solid rgba(255,255,255,.1);
+.arch {
+    background: #02030a;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 20px;
+    line-height: 2;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-.box{
-    color:var(--cyan);
+.box {
+    color: var(--cyan);
 }
-
 
 /* Status */
-
-.status{
-    background:rgba(0,0,0,.5);
-    padding:25px;
-    border-radius:15px;
-    max-width:400px;
-    margin:40px auto;
+.status {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: 40px auto;
 }
 
-
-.online{
-    color:#00ff88;
+.online {
+    color: #00ff88;
 }
-
 
 /* Footer */
-
-footer{
-    text-align:center;
-    padding:40px;
-    color:var(--muted);
+footer {
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
 }
 
-
+/* Mobile Responsive Styles */
 @media (max-width: 700px) {
-    /* Prevent header elements from overlapping */
     nav {
         padding: 15px 5%;
     }
@@ -304,308 +269,159 @@ footer{
         letter-spacing: 0.5px;
     }
 
-    /* Give extra breathing room under the sticky navbar */
     .hero {
-        padding-top: 60px;
+        padding-top: 40px;
         min-height: auto;
     }
 
+    .hero h1 {
+        font-size: 38px;
+        margin-top: 25px;
+    }
 
+    .core {
+        width: 160px;
+        height: 160px;
+    }
 
+    .hero p {
+        font-size: 16px;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .buttons a {
+        width: 100%;
+        text-align: center;
+        margin: 6px 0;
+    }
 }
 </style>
-
 </head>
-
 
 <body>
 
-
 <nav>
-
-<div class="logo-container">
-    <img src="subject.png" alt="H.A.I.V.I. Logo" class="nav-logo-img">
-    <div class="logo">H.A.I.V.I.</div>
-</div>
-
-<span>
-PERSONAL AI OS
-</span>
-
+    <div class="logo-container">
+        <img src="subject.png" alt="H.A.I.V.I. Logo" class="nav-logo-img">
+        <div class="logo">H.A.I.V.I.</div>
+    </div>
+    <span>PERSONAL AI OS</span>
 </nav>
 
-
-
 <div class="hero">
+    <div class="core"></div>
 
-    
-<div class="core"></div>
+    <h1>
+        <span class="gradient">H.A.I.V.I.</span>
+    </h1>
 
+    <p>
+        Hybrid Artificial Intelligence Virtual Intelligence
+        <br><br>
+        Your personal AI operating system for coding, research, automation, knowledge and digital control.
+    </p>
 
-<h1>
-<span class="gradient">
-H.A.I.V.I.
-</span>
-</h1>
+    <div class="buttons">
+        <a href="https://hey.haivi.in" class="primary">Launch Haivi</a>
+        <a class="secondary">Explore System</a>
+    </div>
 
-
-<p>
-Hybrid Artificial Intelligence Virtual Intelligence
-<br><br>
-Your personal AI operating system for coding,
-research, automation, knowledge and digital control.
-</p>
-
-
-<div class="buttons">
-
-<a href="https://hey.haivi.in" class="primary">
-Launch Haivi
-</a>
-
-<a class="secondary">
-Explore System
-</a>
-
+    <div class="status">
+        <h3>HAIVI CORE</h3>
+        <p class="online">● ONLINE</p>
+        <p>VERSION: 0.1</p>
+        <p>MODE: PERSONAL ASSISTANT</p>
+    </div>
 </div>
-
-
-
-<div class="status">
-
-<h3>
-HAIVI CORE
-</h3>
-
-<p class="online">
-● ONLINE
-</p>
-
-<p>
-VERSION: 0.1
-</p>
-
-<p>
-MODE: PERSONAL ASSISTANT
-</p>
-
-</div>
-
-
-</div>
-
-
-
 
 <section>
-
-
-<h2 class="title">
-System Architecture
-</h2>
-
-
-<div class="arch">
-
-<div class="box">
-H.A.I.V.I. CORE
-</div>
-
-↓
-
-AI ORCHESTRATOR
-
-<br>
-
-↓
-
-<br>
-
-Memory System |
-AI Agents |
-Automation
-
-<br><br>
-
-↓
-
-<br>
-
-Voice |
-Text |
-Vision |
-AR/VR
-
-</div>
-
-
+    <h2 class="title">System Architecture</h2>
+    <div class="arch">
+        <div class="box">H.A.I.V.I. CORE</div>
+        ↓<br>
+        AI ORCHESTRATOR<br>
+        ↓<br>
+        Memory System | AI Agents | Automation<br><br>
+        ↓<br>
+        Voice | Text | Vision | AR/VR
+    </div>
 </section>
-
-
-
-
 
 <section>
-
-
-<h2 class="title">
-Capabilities
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-<h3>🧠 Memory Core</h3>
-<p>
-Stores projects, notes, preferences,
-knowledge and personal workflows.
-</p>
-</div>
-
-
-<div class="card">
-<h3>💻 Coding Intelligence</h3>
-<p>
-Helps write, debug, explain and improve software.
-</p>
-</div>
-
-
-<div class="card">
-<h3>🌐 Research Engine</h3>
-<p>
-Analyzes websites, documents,
-videos and technical information.
-</p>
-</div>
-
-
-<div class="card">
-<h3>⚙️ Automation</h3>
-<p>
-Controls applications, APIs,
-devices and workflows.
-</p>
-</div>
-
-
-<div class="card">
-<h3>🔐 Security Guardian</h3>
-<p>
-Protects personal data with
-privacy and security systems.
-</p>
-</div>
-
-
-<div class="card">
-<h3>🎙️ Multimodal Interface</h3>
-<p>
-Voice, text, vision and future interfaces.
-</p>
-</div>
-
-
-</div>
-
+    <h2 class="title">Capabilities</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>🧠 Memory Core</h3>
+            <p>Stores projects, notes, preferences, knowledge and personal workflows.</p>
+        </div>
+        <div class="card">
+            <h3>💻 Coding Intelligence</h3>
+            <p>Helps write, debug, explain and improve software.</p>
+        </div>
+        <div class="card">
+            <h3>🌐 Research Engine</h3>
+            <p>Analyzes websites, documents, videos and technical information.</p>
+        </div>
+        <div class="card">
+            <h3>⚙️ Automation</h3>
+            <p>Controls applications, APIs, devices and workflows.</p>
+        </div>
+        <div class="card">
+            <h3>🔐 Security Guardian</h3>
+            <p>Protects personal data with privacy and security systems.</p>
+        </div>
+        <div class="card">
+            <h3>🎙️ Multimodal Interface</h3>
+            <p>Voice, text, vision and future interfaces.</p>
+        </div>
+    </div>
 </section>
-
-
-
-
 
 <section>
-
-
-<h2 class="title">
-Haivi Evolution
-</h2>
-
-
-<div class="grid">
-
-
-<div class="card">
-<h3>v0.1</h3>
-<p>
-AI Core + Website Identity
-</p>
-</div>
-
-
-<div class="card">
-<h3>v0.2</h3>
-<p>
-Memory System
-</p>
-</div>
-
-
-<div class="card">
-<h3>v0.3</h3>
-<p>
-Coding Agent
-</p>
-</div>
-
-
-<div class="card">
-<h3>v0.4</h3>
-<p>
-Research Agent
-</p>
-</div>
-
-
-<div class="card">
-<h3>v1.0</h3>
-<p>
-Personal AI Operating System
-</p>
-</div>
-
-
-</div>
-
+    <h2 class="title">Haivi Evolution</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>v0.1</h3>
+            <p>AI Core + Website Identity</p>
+        </div>
+        <div class="card">
+            <h3>v0.2</h3>
+            <p>Memory System</p>
+        </div>
+        <div class="card">
+            <h3>v0.3</h3>
+            <p>Coding Agent</p>
+        </div>
+        <div class="card">
+            <h3>v0.4</h3>
+            <p>Research Agent</p>
+        </div>
+        <div class="card">
+            <h3>v1.0</h3>
+            <p>Personal AI Operating System</p>
+        </div>
+    </div>
 </section>
-
-
-
-
 
 <section>
-
-<h2 class="title">
-Your Data. Your Control.
-</h2>
-
-<div class="card">
-
-<p>
-Haivi is designed as a private personal AI assistant.
-Permission-based actions, secure data handling,
-and user-controlled intelligence.
-</p>
-
-</div>
-
+    <h2 class="title">Your Data. Your Control.</h2>
+    <div class="card">
+        <p>
+            Haivi is designed as a private personal AI assistant. Permission-based actions, secure data handling, and user-controlled intelligence.
+        </p>
+    </div>
 </section>
-
-
-
-
 
 <footer>
-
-© 2026 H.A.I.V.I.  
-<br>
-Hybrid Artificial Intelligence Virtual Intelligence
-
+    © 2026 H.A.I.V.I.<br>
+    Hybrid Artificial Intelligence Virtual Intelligence
 </footer>
-
-
 
 </body>
 </html>
