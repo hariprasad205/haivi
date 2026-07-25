@@ -6,6 +6,9 @@
 
 <title>H.A.I.V.I. | Personal AI Operating System</title>
 
+<!-- Favicon / Tab Logo -->
+<link rel="icon" type="image/png" href="subject.png">
+
 <style>
 :root {
     --bg:#050816;
@@ -62,11 +65,25 @@ body::after{
 nav{
     display:flex;
     justify-content:space-between;
+    align-items:center;
     padding:25px 8%;
     border-bottom:1px solid rgba(255,255,255,.1);
     backdrop-filter:blur(20px);
     position:sticky;
     top:0;
+    z-index: 100;
+}
+
+.logo-container {
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.nav-logo-img {
+    height:32px;
+    width:auto;
+    object-fit:contain;
 }
 
 .logo{
@@ -75,6 +92,7 @@ nav{
     background:linear-gradient(90deg,var(--cyan),var(--purple));
     color:transparent;
     background-clip:text;
+    -webkit-background-clip:text;
 }
 
 nav span{
@@ -134,6 +152,7 @@ nav span{
 
     color:transparent;
     background-clip:text;
+    -webkit-background-clip:text;
 }
 
 
@@ -152,6 +171,7 @@ nav span{
     border-radius:30px;
     text-decoration:none;
     font-weight:bold;
+    cursor:pointer;
 }
 
 
@@ -240,13 +260,11 @@ section{
 /* Status */
 
 .status{
-
     background:rgba(0,0,0,.5);
     padding:25px;
     border-radius:15px;
     max-width:400px;
     margin:40px auto;
-
 }
 
 
@@ -265,11 +283,9 @@ footer{
 
 
 @media(max-width:700px){
-
-.hero h1{
-font-size:42px;
-}
-
+    .hero h1{
+        font-size:42px;
+    }
 }
 </style>
 
@@ -281,8 +297,9 @@ font-size:42px;
 
 <nav>
 
-<div class="logo">
-H.A.I.V.I.
+<div class="logo-container">
+    <img src="subject.png" alt="H.A.I.V.I. Logo" class="nav-logo-img">
+    <div class="logo">H.A.I.V.I.</div>
 </div>
 
 <span>
