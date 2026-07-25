@@ -6,8 +6,11 @@
 
 <title>H.A.I.V.I. | Personal AI Operating System</title>
 
-<!-- Favicon / Tab Logo -->
+<!-- Standard Favicon -->
 <link rel="icon" type="image/png" href="subject.png">
+
+<!-- iOS Safari Tab / Bookmark Icon -->
+<link rel="apple-touch-icon" href="subject.png">
 
 <style>
 :root {
@@ -282,10 +285,60 @@ footer{
 }
 
 
-@media(max-width:700px){
-    .hero h1{
-        font-size:42px;
+@media (max-width: 700px) {
+    /* Prevent header elements from overlapping */
+    nav {
+        padding: 15px 5%;
     }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-logo-img {
+        height: 24px;
+    }
+
+    nav span {
+        font-size: 12px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Give extra breathing room under the sticky navbar */
+    .hero {
+        padding-top: 60px;
+        min-height: auto;
+    }
+
+    /* Resize hero element sizing for mobile screens */
+    .hero h1 {
+        font-size: 38px;
+        margin-top: 25px;
+    }
+
+    .core {
+        width: 160px;
+        height: 160px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Mobile friendly button layout */
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .buttons a {
+        width: 100%;
+        text-align: center;
+        margin: 6px 0;
+    }
+
 }
 </style>
 
